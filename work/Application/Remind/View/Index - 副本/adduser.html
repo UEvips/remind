@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>公告管理</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link rel="stylesheet" href="__PUBLIC__/remind/css//bootstrap.min.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="__PUBLIC__/remind/css//style.css" type="text/css" media="all" />
+        <script type="text/javascript" src="__PUBLIC__/remind/js/jquery.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/remind/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="g-header">
+            <div class="container">
+                <div class="g-header1 fx">
+                    <div class="fx">
+                        <div class="headerimgl">
+                            <img src="__PUBLIC__/remind/images/g-1_03.png"/>
+                        </div>
+                        <div class="headerp">
+                            工作流提醒功能后台
+                        </div>
+                    </div>
+                    <div class="heclose">
+                        <img src="__PUBLIC__/remind/images/v-j_05.png"/>
+                        <p>退出</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gbody">
+            <div class="container">
+                <div class="gbody1 fx1">
+                    <!--左侧：-->
+                    <div class="l-gbody">
+                        <div class="l-gbody-a">
+                            <div class="lie">
+                                <a href="{:U('remind/message')}" class="lieon">公告管理</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/tixing')}">管理提醒</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/work')}">任务管理</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/userlist')}">权限管理</a>
+                            </div>
+<!--                            <div class="lie">
+                                <a href="{:U('remind/adduser')}">用户管理</a>
+                            </div>-->
+                        </div>
+                    </div>
+                    <!--右侧-->
+                    <div class="r-gbody">
+                        <form action="{:U('remind/message')}" method="post" enctype="multipart/form-data">
+                            <ul>
+                                <li class="fxs tbheder">
+                                    <div class="p_title p-to">
+                                        标题:
+                                        <input type="text" name="title" id="" value="{$list['title']}"/><label for=""></label>
+                                    </div>
+                                </li>
+                                <li class="tbheder tbbody" id="tbheder4">
+                                    <p class=" p-to">内容:</p>
+                                    <textarea name='content'>{$list['title']}</textarea>
+                                </li>
+                                <li class="fxj" id="tbheder3">
+                                    <p class="p p-a tbbody1"><button class="retxt1 pag1">提交</button></p>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+

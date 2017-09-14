@@ -1,0 +1,51 @@
+<extend name="P:rbcm" />
+<block name="head">
+<title></title>
+</block>
+<block name="body">
+  <table class="table">
+   <tr><td colspan="5" align="center">角色列表</td></tr>
+   <tr>
+      <td>id</td>
+      <td>名称</td>
+      <td>描述</td>
+      <td>开启状态</td>
+      <td>操作</td>
+   </tr>
+   <volist name='list' id='v'>   
+   <tr>
+      <td>{$v.id}</td>
+      <td>{$v.name}</td>
+      <td>{$v.remark}</td>
+      <td>
+          <eq name='v.status' value='1'>开启 <else />关闭</eq>
+      </td>
+      <td>
+          <button class='bt2' id="{$v.id}" name="{$v.status}"><eq name='v.status' value='1'>关闭<else />开启</eq></button>
+          [<a href="{:U('Rbac/setAccess',array('rid'=>$v[id]))}">配置权限</a>]
+      </td>
+   </tr>
+   </volist>
+  </table>
+</block>
+<block name="script">
+<script>
+$(function(){
+	var CONTROL="{:U('Rbac/rolelist')}";
+	$('.bt2').click(function(){
+		var bt=$(this);
+		var id=bt.attr('id');
+		var status=bt.attr('name')==1?0:1;;
+		$.post(CONTROL,{id:id,status:status},function(data){
+			if(data.states){
+				var td=bt.parent().prev();
+				var tmp=bt.html();
+				bt.html(td.html());
+				td.html(tmp);
+				bt.attr('name',status);
+			}
+		});
+	});
+});
+</script>
+</block>

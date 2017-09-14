@@ -1,0 +1,51 @@
+<extend name="P:rbcm" />
+<block name="head">
+<title></title>
+</block>
+<block name="body">
+<form id='nodefm' onsubmit="return false">
+  <table  class="table">
+   <tr><td colspan="2" align="center" id="addmsg">{$title}</td></tr>
+   <tr>
+      <td align="right" width="40%">名称：</td>
+      <td ><input name="name" type="text"  /></td>
+   </tr>
+   <tr>
+      <td align="right" >描述：</td>
+      <td ><input name="title" type="text" /></td>
+   </tr>
+   <tr>
+      <td align="right">排序：</td>
+      <td ><input name="sort" type="number" value="1"/></td>
+   </tr>
+   <tr>
+      <td align="right">开启：</td>
+      <td ><input name="status" type="checkbox" value="1"/></td>
+   </tr>
+   <tr>
+   <td colspan="2" align="center" id="addmsg">
+     <button class="submit" id="submits">保存</button>
+     <input type="hidden" name="pid" value="{$pid}" />
+   </td></tr>
+  </table>
+</form>
+</block>
+<block name="script">
+<script>
+$(function(){
+	var CONTROL="{:U('Rbac/addNode')}";
+	$('#submits').click(function(){
+       var send=FmNull('#nodefm input',2);
+	   if(send){
+		    loading('#addmsg');
+			$.post(CONTROL,$('#nodefm').serialize(),function(data){			
+			     loading('#addmsg',data.states);
+		    });
+	   }
+	});
+	$('#nodefm input').keydown(function(e){
+    	isEnter('#nodefm',$(this),e,2,'#submits');
+	});
+});
+</script>
+</block>

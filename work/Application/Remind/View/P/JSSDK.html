@@ -1,0 +1,35 @@
+<script src='https://g.alicdn.com/dingding/dingtalk-pc-api/2.7.0/index.js'></script>
+<script type="text/javascript">
+   var config={$jssdkconfig};
+       config.jsApiList=[ 
+	       'device.notification.alert', 
+		   'device.notification.confirm',
+		   'device.notification.actionSheet',
+		   'device.notification.prompt',
+		   'biz.contact.choose',
+		   'biz.user.get',
+		   'device.notification.toast',
+		   'biz.util.open',
+		   'biz.util.openModal',
+		   'biz.util.openSlidePanel',
+		   'biz.util.ut',
+		   'biz.ding.post',
+		   'biz.customContact.choose',
+		   'biz.customContact.multipleChoose',
+		   'biz.navigation.quit',
+		   'biz.navigation.setTitle',
+		   'biz.navigation.setLeft',
+		   'biz.util.uploadImage',
+		   'biz.util.downloadFile',
+		   'biz.util.openLocalFile',
+		   'biz.util.isLocalFileExist',
+		   'biz.util.previewImage',
+		   'biz.util.openLink',
+		   'addEventListener',
+		   'removeEventListener'
+		   ] // 必填，需要使用的jsapi列表，注意：不要带dd。
+	DingTalkPC.config(config);
+	DingTalkPC.ready(function(res){
+		authorizedAPIList:config.jsApiList;//已授权API列表 
+	});
+</script>

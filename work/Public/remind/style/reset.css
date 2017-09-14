@@ -1,0 +1,342 @@
+body
+{
+    font-family: Microsoft Yahei,'微软雅黑',SimSun,'宋体',sans-serif ,arial;
+}
+body,
+ul,
+li,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr
+{
+    margin: 0;
+    padding: 0;
+}
+table
+{
+    border-collapse: collapse;
+}
+img
+{
+    font-size: 0;
+
+    display: block;
+
+    width: 100%;
+
+    border: 0;
+}
+a
+{
+    text-decoration: none;
+
+    color: black;
+}
+a:hover
+{
+    text-decoration: none !important;
+}
+*
+{
+    box-sizing: border-box;
+}
+ul,
+ol
+{
+    list-style: none;
+}
+button
+{
+    border: none;
+}
+em,
+i
+{
+    font-style: normal;
+}   header,
+nav,
+aside,
+section,
+article,
+footer
+{
+    display: block;
+}
+.left
+{
+    float: left;
+}
+.right
+{
+    float: right;
+}
+.clearfix:after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
+/*字体图标*/
+.icon
+{
+    overflow: hidden;
+
+    width: 1em;
+    height: 1em;
+
+    vertical-align: -.15em;
+
+    fill: currentColor;
+}
+/*加载中*/
+#loadBox
+{
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: .3rem;
+    margin-top: .2rem;
+}
+.wait
+{
+    position: absolute;
+    top: calc(50% - .15rem);
+    left: calc(50% - .15rem);
+
+    display: block;
+
+    width: .3rem;
+    height: .3rem;
+
+    animation: rotate 1s linear infinite;
+
+    background: url(../../image/load.png) no-repeat center/cover;
+}
+@keyframes rotate
+{
+    0%
+    {
+        transform: rotateZ(0);
+    }100%
+    {
+        transform: rotateZ(360deg);
+    }
+}
+/*加载中全屏居中*/
+#loadBox2
+{
+    position: fixed;
+    z-index: 200;
+    top: 50%;
+    left: 50%;
+
+    display: inline-block;
+
+    width: .8rem;
+    height: .8rem;
+
+    transform: translateX(-50%) translateY(-50%);
+
+    border-radius: .05rem;
+    background-color: rgba(96, 96, 96,.4);
+}
+.wait2
+{
+    position: absolute;
+    top: calc(50% - .2rem);
+    left: calc(50% - .2rem);
+
+    display: block;
+
+    width: .4rem;
+    height: .4rem;
+
+    animation: rotate 1s linear infinite;
+
+    background: url(../image/load2.png) no-repeat center/cover;
+}
+/*遮罩*/
+.mask
+{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(0,0,0,.6);
+}
+.mask2
+{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0);
+}
+/* 加载中 */
+
+#loading
+{
+    width: 200px;
+    height: 100px;
+    margin: 50px auto;
+
+    text-align: center;
+}
+
+#loading span
+{
+    display: inline-block;
+
+    width: 15px;
+    height: 80px;
+    margin-right: 7px;
+
+    animation: loader 1s infinite;
+
+    background: #6db738;
+}
+#loading p
+{
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: 300;
+
+    margin-top: 5px;
+
+    text-align: center;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+
+    color: #6db738;
+}
+@keyframes loader
+{
+    50%
+    {
+        height: 30px;
+        margin-top: 50px;
+
+        opacity: .5;
+    }
+}
+
+#loading span:nth-child(1)
+{
+    animation-delay: .1s;
+}
+#loading span:nth-child(2)
+{
+    animation-delay: .2s;
+}
+#loading span:nth-child(3)
+{
+    animation-delay: .3s;
+}
+#loading span:nth-child(4)
+{
+    animation-delay: .4s;
+}
+#loading span:nth-child(5)
+{
+    animation-delay: .5s;
+}
+#loading span:nth-child(6)
+{
+    animation-delay: .6s;
+}
+/* toast */
+.toast{
+    max-width: 160px;
+    height: auto;
+    padding: 8px 10px;
+    font-size: 14px;
+    background-color: rgba(109, 183, 56, .7);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    letter-spacing: 1px;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+}
+.toast.active{
+    opacity: 1;
+}
+.toast .icon{
+    position: absolute;
+    left: .7em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+.toast .toa_txt{
+    padding-left: 2em;
+    text-align: left;
+}
+/*下拉框*/
+.selectName{
+    width: 100%;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    padding: 0 .8rem;
+    border: 1px solid #e0e0e0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/ad.png") no-repeat scroll right center transparent;
+    font-size: .533rem;
+    color: #626262;
+}
+/*文字溢出*/
+.ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*媒体查询*/
+@media (min-width: 1024px){
+    html,body{font-size: 16.72px}
+} /*>=1024的设备*/
+
+@media (min-width: 1100px) {
+    html,body{font-size: 18px}
+} /*>=1100的设备*/
+@media (min-width: 1280px) {
+    html,body{font-size: 20.58px;}
+} /*>=1280的设备*/
+
+@media (min-width: 1366px) {
+    html,body{font-size: 21.86px;}
+}  
+@media (min-width: 1440px) {
+    html,body{font-size: 23.15px;}
+} 
+
+@media (min-width: 1680px) {
+    html,body{font-size: 25.72px;}
+} 
+@media (min-width: 1920px) {
+    html,body{font-size: 30px;}
+} 

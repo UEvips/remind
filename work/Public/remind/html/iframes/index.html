@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <link rel="stylesheet" href="../../style/reset.css" />
+        <link rel="stylesheet" href="../../lib/style.css" />
+        <link rel="stylesheet" href="../../style/index.css" />
+        <link rel="stylesheet" href="../../style/rightPart/ifra_index.css" />
+    </head>
+    <body>
+        <!--头部---->
+        <div class="xtHead">
+            <div class="left logo">
+                <img src="../../images/txtlogo.png" alt="">
+            </div>
+            <div class="right user">
+                <a href="" class="setting">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-yonghushezhi"></use>
+                    </svg>
+                </a> 
+                <a href="" class="out">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tuichu"></use>
+                    </svg>
+                    <span>退出</span>
+                </a>
+            </div>
+        </div>
+        <!--头部 end--------------------->
+
+        <!--主体---->
+        <div class="main clearfix">
+            <!--           左-->
+            <div class="leftPart left">
+                <!---->
+                <!--日程-->
+                <div class="menu active on clearfix">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fuzai"></use>
+                    </svg>
+                    <span class="span">日&emsp;&emsp;程</span>
+                    <a id="arrow" class="active">
+                        <svg class="icon right" aria-hidden="true">
+                            <use xlink:href="#icon-xiafan"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li data-num="1"><a href="../../index.html">个人进度</a></li>
+                    <li data-num="2"><a href="../iframes/tdjd.html">团队进度</a></li>
+                </ul>
+                <!--用户管理-->
+                <div class="menu active clearfix">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-guanli"></use>
+                    </svg>
+                    <span class="span">用户管理</span>
+                    <a id="arrow" class="active">
+                        <svg class="icon right" aria-hidden="true">
+                            <use xlink:href="#icon-xiafan"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li data-num="3"><a href="../iframes/bmxz.html">部门选择</a></li>
+                    <li data-num="4"><a href="../iframes/qxfp.html">权限分配</a></li>
+                </ul>
+                <!--日志-->
+                <div class="menu active clearfix">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-rizhi"></use>
+                    </svg>
+                    <span class="span">日&emsp;&emsp;志</span>
+                    <a id="arrow" class="active">
+                        <svg class="icon right" aria-hidden="true">
+                            <use xlink:href="#icon-xiafan"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li data-num="5"><a href="../iframes/tjrz.html">添加日志</a></li>
+                    <li data-num="6"><a href="../iframes/wdrz.html">我的日志</a></li>
+                    <li data-num="7"><a href="../iframes/ckrz.html">查看日志</a></li>
+                </ul>
+                <!--工单-->
+                <div class="menu active clearfix">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-gongdan"></use>
+                    </svg>
+                    <span class="span">工&emsp;&emsp;单</span>
+                    <a id="arrow" class="active">
+                        <svg class="icon right" aria-hidden="true">
+                            <use xlink:href="#icon-xiafan"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li data-num="8"><a href="../iframes/dfp.html">待分配</a></li>
+                    <li data-num="9"><a href="../iframes/jxz.html">进行中</a></li>
+                    <li class="active" data-num="10"><a href="../iframes/ywc.html">已完成</a></li>
+                </ul>
+                <!---->
+            </div>
+            <!--            右-->
+            <div class="rightPart right">
+                <div class="right_box">
+
+                    <div class="tplWrap">
+                        <div class="title">
+                            <span>工&emsp;&emsp;单</span> 
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-you"></use>
+                            </svg>
+                            <i>我的日志</i>
+                        </div>
+                        <div style="width:100%;height:1px;background:#6db738;margin-top:.267rem;"></div>
+                        <div class="min-table" style="margin-top:.667rem;">
+                            <div class="t_head clearfix">                              
+                                <div class="datePick left">
+                                    <input type="text" id="ECalendar_case1" placeholder="选择开始时间" readonly />
+                                </div>
+                                <div class="to left">&ensp;to&ensp;</div>
+                                <div class="datePick left">
+                                    <input type="text" id="ECalendar_case2" placeholder="选择结束时间" readonly />
+                                </div>
+                                <div class="left search">搜索</div>
+                            </div>
+                            <div class="list_contain clearfix">
+
+                                <div class="list_one">
+                                    <div class="one_time clearfix">
+                                        <p class="left">创建时间：2017.07.08</p>
+                                        <p class="right">周丽萍</p>
+                                    </div>
+                                    <div class="one_txt">
+                                        <div class="noon t_box clearfix">
+                                            <p class="left">上&emsp;&emsp;午：</p>
+                                            <ul class="right">
+                                                <li>1、项目名称-类型-工作内容工作内容</li>
+                                                <li>2、项目名称-类型-工作内容工作内容</li>
+                                            </ul>
+                                        </div>
+                                        <div class="afternoon t_box clearfix">
+                                            <p class="left">下&emsp;&emsp;午：</p>
+                                            <ul class="right">
+                                                <li>1、项目名称-类型-工作内容工作内容</li>
+                                                <li>2、项目名称-类型-工作内容工作内容</li>
+                                            </ul>
+                                        </div>
+                                        <div class="tomorrow t_box clearfix">
+                                            <p class="left">明天安排：</p>
+                                            <ul class="right">
+                                                <li>1、项目名称-类型-工作内容工作内容工作内容</li>
+                                                <li>2、其他其他其他其他其他其他其他其他其他其他</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="one_foot clearfix">
+                                        <div class="right one_right clearfix">
+                                            <p><svg class="icon" aria-hidden="true">
+                                                <use xlink:href="#icon-xiugai"></use>
+                                                </svg>&ensp;修改</p>
+                                            <p><svg class="icon" aria-hidden="true">
+                                                <use xlink:href="#icon-shanchu"></use>
+                                                </svg>&ensp;删除</p>
+                                            <p>展开&ensp;<svg class="icon" aria-hidden="true">
+                                                <use xlink:href="#icon-jiantouyoushuang-"></use>
+                                                </svg></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="tab_foot clearfix"><input class="checkbox" id="all_check" type="checkbox"><label class="left" for="all_check"></label><span>全选</span><span>删除</span><span><svg class="icon right" aria-hidden="true"><use xlink:href="#icon-jia"></use></svg></span></div>
+                    </div>
+
+                    <!--右半部分 分别渲染处 end-->
+                </div>
+            </div>
+        </div>
+        <!--主体 end--------------------->
+        <!--js-->
+        <script type="text/javascript" src="../../font/iconfont.js"></script>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/Ecalendar.jquery.min.js"></script>
+        <script type="text/javascript" src="../../script/pub.js"></script>
+        <!--        <script type="text/javascript" src="../../script/rightPart/ywc.js"></script>-->
+        <script type="text/javascript">
+            $(function(){
+                $("#ECalendar_case1").ECalendar({
+                    type:"date",
+                    stamp:false,
+                    skin:"#6db738",
+                    offset:[0,5]
+                });
+                $("#ECalendar_case2").ECalendar({
+                    type:"date",
+                    stamp:false,
+                    skin:'#6db738',
+                    offset:[0,2]
+                });
+            })
+        </script>
+    </body>
+</html>

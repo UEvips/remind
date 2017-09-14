@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>部门</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link rel="stylesheet" href="__PUBLIC__/remind/css/bootstrap.min.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="__PUBLIC__/remind/css/style.css" type="text/css" media="all" />
+        <script type="text/javascript" src="__PUBLIC__/remind/js/jquery.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/remind/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="g-header">
+            <div class="container">
+                <div class="g-header1 fx">
+                    <div class="fx">
+                        <div class="headerimgl">
+                            <img src="__PUBLIC__/remind/images/g-1_03.png"/>
+                        </div>
+                        <div class="headerp">
+                            工作流提醒功能后台
+                        </div>
+                    </div>
+                    <div class="heclose">
+                        <img src="__PUBLIC__/remind/images/v-j_05.png"/>
+                        <p>退出</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form name='ufm' action="{:U('Remind/userlist',array('sub'=>'addrole'))}">
+            <div class="gbody">
+                <div class="container">
+                    <div class="gbody1 fx1">
+                        <!--左侧：-->
+                        <div class="l-gbody">
+                            <div class="l-gbody-a">
+                                <div class="lie">
+                                    <a href="{:U('remind/message')}">公告管理</a>
+                                </div>
+                                <div class="lie">
+                                    <a href="{:U('remind/tixing')}">管理提醒</a>
+                                </div>
+                                <div class="lie">
+                                    <a href="{:U('remind/work')}">任务管理</a>
+                                </div>
+                                <div class="lie">
+                                    <a href="{:U('remind/userlist')}" class="lieon">权限管理</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--右侧-->
+                        <div class="r-gbody">
+                            <ul>
+                                <li class="fxs tbheder "id="tbheder1">
+                                    <div class="p p1">部门管理</div>
+                                </li>
+                                <volist name='user' id='v'>
+                                    <li class="fxs tbheder ">
+                                        <div class="p p1 fxj">
+                                            <div class="reternbut ">
+                                                <label><input type="checkbox" name='uid[]' value='{$v.uid}' id="Checkbox1"><i></i><b></b></label>
+                                            </div>
+                                        </div>
+                                        <div class="p p2">{$v.uid}</div>
+                                        <div class="p p3">{$v.username}</div>
+                                        <div class="p p4">            
+                                            <foreach name='v.remind_role' item='vo'>
+                                                <span style="margin: 0 2px;">{$vo.remark}</span>|
+                                            </foreach>
+                                        </div>
+                                        <div class="p p4">            
+                                            <a href="javascript:;" uid="{$v.uid}" class="user_del">删除</a>
+                                        </div>
+                                    </li>
+                                </volist>
+                                <li class="fxs tbheder">
+                                    <p class="p5" style='padding:2px 4px;' id="addUser">添加部门</p>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="black_overlay aa">
+
+                <div class="alert1" >
+                    <p class="">角色分配列表</p>
+                    <div class="" style="background-color: #fff;">
+                        <div style='width:100%;height: auto;flex-direction: row;flex-wrap: wrap;display: flex;'>
+                            <volist name='role' id='v'>
+                                <div class="fxj tbut1">
+                                    <div class="reternbut tbb">
+                                        <label><input type="checkbox" name='rid[]' value='{$v.id}'><i></i><b></b></label>
+                                    </div>
+                                    <div class="fp ">&nbsp;{$v.name}</div>
+                                </div>
+                            </volist>
+                        </div>
+                        <div class="ttbut fxj ttnut" >
+                            <button  name="subs" class="retxt1 pag1 fp1" id="ok">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="addUser">
+            <div class="add" >
+                <p class="">添加部门</p>
+                <div class="info" style="background-color: #fff;">
+                    <form action="{:U('remind/addUser')}" method="post">
+                        <input type="hidden" name="uid" id="uid" value=""/>
+                        <div style='width:100%;height: auto;'>
+                            <p>
+                                <label for="">部&nbsp;&nbsp;门&nbsp;&nbsp;：&nbsp;</label><input type="text" name="username" id="username" value="" />
+                            </p>
+                        </div>
+                        <div class="ttbut fxj ttnut" >
+                            <input class="retxt1 pag1 fp1" type="submit" style="border:none;" id="addOk" value="确定"/>
+                        </div>
+                        <div class="cancle" >
+                            X
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function() {
+                $(".addUser").hide();
+                $("#addUser,.user_save").click(function() {
+                    var name = $(this).attr('class');
+                    if(name=="user_save"){
+                        $('#uid').val($(this).attr('uid'));
+                        $('#username').val($(this).attr('nid'));
+                        $('#mobile').val($(this).attr('mid'));
+                        $('#depart').val($(this).attr('did'));
+                    }
+                    $(".addUser").show();
+                });
+            });
+            $(function(){
+                $(document).on('click','.user_del',function(){
+                    alert('确认删除该用户？');
+                    var uid = $(this).attr('uid');
+                    $.post("{:U('remind/deluser')}",{uid:uid},function(msg){
+                        alert(msg.msg);
+                        $(this).parent().parent().remove();
+                    },'json')
+                })
+            })
+            $(function() {
+                $("#addOk").click(function() {
+                    $(".addUser").css("display", "none");
+                });
+            })
+            $(function() {
+                $(".cancle").click(function() {
+                    $(".addUser").hide();
+                });
+            })
+            $(function() {
+                $(".black_overlay").hide();
+                $("#openp").click(function() {
+//                    $.post("{:U('remind/addrole')}",function(msg){
+//                        alert(msg);
+//                    },'json')
+                    $(".black_overlay").show();
+                });
+            })
+            $(function() {
+                $("#ok").click(function() {
+                    $(".black_overlay").css("display", "none");
+                });
+            })
+            $(function() {
+                $('#allbut').click(function() {
+                    if ($('#allbut').prop('checked')) {
+                        $('.r-gbody input[type="checkbox"]').prop('checked', true);
+                    } else {
+                        $('.r-gbody input[type="checkbox"]').prop('checked', false);
+                    }
+                })
+
+            })
+        </script>
+        <script>
+            $(function() {
+                $('form[name=ufm]').submit(function() {
+                    //alert(1);
+                    if ($("input[name='rid[]']:checked").length <= 0 || $("input[name='uid[]']:checked").length <= 0) {
+                        alert('请选择一个角色或员工');
+                        return false;
+                    }
+                    ;
+                    $.get($(this).attr('action'), $(this).serialize() + '&' + $('form[name=rfm]').serialize(), function() {
+                        location.reload();
+                    });
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>

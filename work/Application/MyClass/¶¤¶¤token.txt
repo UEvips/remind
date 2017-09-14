@@ -1,0 +1,10 @@
+14b4cf77d7cc3f8c9d03c01a90ecca97
+
+CorpID:     dingea7bff30eaa1d1d4
+
+CorpSecret:	sFuh97hXWQaYusMc0czsLLCFTOnOMgR7T-yErga4vzt1frMIwjdWb0yLFh0-hZ2u
+
+AgentID:		14448391
+
+
+https://oapi.dingtalk.com/gettoken?corpid=dingea7bff30eaa1d1d4&corpsecret=sFuh97hXWQaYusMc0czsLLCFTOnOMgR7T-yErga4vzt1frMIwjdWb0yLFh0-hZ2u

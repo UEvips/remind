@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>任务管理</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link rel="stylesheet" href="__PUBLIC__/remind/css//bootstrap.min.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="__PUBLIC__/remind/css/style.css" type="text/css" media="all" />
+        <script type="text/javascript" src="__PUBLIC__/remind/js/jquery.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/remind/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="g-header">
+            <div class="container">
+                <div class="g-header1 fx">
+                    <div class="fx">
+                        <div class="headerimgl">
+                            <img src="__PUBLIC__/remind/images/g-1_03.png"/>
+                        </div>
+                        <div class="headerp">
+                            工作流提醒功能后台
+                        </div>
+                    </div>
+                    <div class="heclose">
+                        <img src="__PUBLIC__/remind/images/v-j_05.png"/>
+                        <p>退出</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gbody">
+            <div class="container">
+                <div class="gbody1 fx1">
+                    <!--左侧：-->
+                    <div class="l-gbody">
+                        <div class="l-gbody-a">
+                            <div class="lie">
+                                <a href="{:U('remind/message')}">公告管理</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/tixing')}">管理提醒</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/work')}" class="lieon">任务管理</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/userlist')}">权限管理</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--右侧-->
+                    <div class="r-gbody">
+                        <ul>
+                            <li class="fxs tbheder "id="tbheder1">
+                                <div class="p p1">项目分类</div>
+                                <div class="p p1">任务目标</div>
+                                <div class="p p1">任务分解</div>
+                                <div class="p p1">参与人</div>
+                                <div class="p p1">计划时间</div>
+                                <div class="p p1">当前进度</div>
+                                <div class="p p1">备注</div>
+                            </li>
+                            <volist name="list" id="v">
+                                <li class="fxs tbheder" style="position: relative;">
+                                    <div title='{$v.work}' uid='{$v.id}' class="p p1 addUserclick">{$v.work}</div>
+                                    <div title='{$v.decompose}' uid='{$v.id}' class="p p1 addUserclick">{$v.decompose}</div>
+                                    <div title='{$v.title}' uid='{$v.id}' class="p p1 addUserclick">{$v.title}</div>
+                                    <div class="p p1 pcc">
+                                        <select class="sel">
+                                            <volist name="v.cyr" id="vo">
+                                            <option value="">{$vo}</option>
+                                            </volist>
+                                        </select>
+                                    </div>
+                                    <div class="selt" style="display: none;">
+                                        <volist name="v.fzr" id="vo">
+                                            <p value="{$vo.uid}">{$vo.username}</p>
+                                        </volist>
+                                    </div>
+                                    <div class="p p1">{$v.etime}</div>
+                                    <div title="{$v.jd}" class="p p1">{$v.jd}</div>
+                                    <div class="p p1">{$v.content}</div>
+
+                                </li>
+                            </volist>
+                            <li class="fxss"id="tbheder2">
+                                <div class="fx retxt1 fxj">
+                                    <div class="" style="margin-right:5px;">
+                                        <img src="__PUBLIC__/remind/images/excel_03.png"/>
+                                    </div>
+                                    <form action="{:U('remind/phpexcel1')}" method="post" enctype="multipart/form-data" style="display:flex;justify-content:space-around;">
+                                        <input name="up" type="file" value=""/>
+                                        <input type='submit' value='提交' />
+                                    </form>
+                                    <!--<p class="txtp">上传excel表</p>-->
+                                </div>
+                            </li>
+                        </ul>
+                        <style>
+                            #work_page{width:100%;height:4rem;}
+                            #work_page b{width:20px;height:20px;margin-right:10px;}
+                            #work_page i{font-size:18px;font-style: normal;margin-right:10px;}
+                            #work_page img{width:20px;height:20px;}
+                        </style>
+                        <div id="work_page">{$page}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="addUser" style='width:700px;left: 20%;'>
+            <div class="add" >
+                <p class="">查看</p>
+                <div class="info" style="background-color: #fff;">
+                    <form action="{:U('remind/addUser')}" method="post">
+                        <input type="hidden" name="uid" id="uid" value=""/>
+                        <div class="addcontent" style='display:flex;justify-content:space-around;'>
+                        <div style='height: auto;float:left;'>
+                            <p>
+                                <label for="">项目分类：</label><input type="text" name="username" id="username" value="" style='border:none;outline: none' />
+                            </p>
+                            <p>
+                                <label for="">任务目标：</label><input type="text" name="pwd" id="" value="" style='border:none;outline: none' />
+                            </p>
+                            <p>
+                                <label for="">任务分解：</label><input type="text" name="mobile" id="mobile" value="" style='border:none;outline: none'/>
+                            </p>
+                            <p>
+                                <label for="">参&nbsp;&nbsp;与&nbsp;&nbsp;人：</label><input type="text" name="mobile" id="mobile" value="" style='border:none;outline: none' />
+                            </p>
+                            
+                            </div>
+            <div style='height: auto;float:left;'>
+                            <p>
+                                <label for="">负&nbsp;&nbsp;责&nbsp;&nbsp;人：</label><input type="text" name="mobile" id="mobile" value="" style='border:none;outline: none'/>
+                            </p>
+                            <p>
+                                <label for="">计划时间：</label><input type="text" name="mobile" id="mobile" value="" style='border:none;outline: none'/>
+                            </p>
+                            <p>
+                                <label for="">当前进度：</label><input type="text" name="mobile" id="mobile" value="" style='border:none;outline: none'/>
+                            </p>
+                            <p>
+                                <label for="">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</label><input type="text" name="mobile" id="mobile" value="" style='border:none;outline: none' />
+                            </p>
+                        </div>
+                            </div>
+                        <div class="ttbut fxj ttnut" >
+                            <input class="retxt1 pag1 fp1" type="submit" style="border:none;clear: both;" id="addOk" value="确定"/>
+                        </div>
+                        <div class="cancle" >
+                            X
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+             $(function() {
+                $(".addUser").hide();
+                $(".addUserclick").click(function() {
+//                    var uid = $(this).attr('uid');
+//                    $.post("{:U('remind/workinfo')}",{uid:uid},function(msg){
+//                        
+//                    },'json')
+                    $(".addUser").show();
+                });
+            });
+            $(function() {
+                $(".cancle").click(function() {
+                    $(".addUser").hide();
+                });
+            })
+            $(function() {
+                $(document).on('change', '', function() {
+
+                }, 'json')
+                $('.but').click(function() {
+                    var c = $('.but').index($(this));
+                    var d = $('.selt').eq(c).css('display');
+                    if (d == 'none') {
+                        $('.selt').eq(c).css('display', 'block');
+                    } else {
+                        $('.selt').eq(c).css('display', 'none');
+                    }
+                })
+
+                $(".selt p").click(function() {
+                    $(this).parent().prev().find("#blokp1").text($(this).text());
+                    $(".selt").css("display", "none");
+                })
+
+            })
+        </script>
+    </body>
+</html>
+

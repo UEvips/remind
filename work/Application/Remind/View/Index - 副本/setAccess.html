@@ -1,0 +1,56 @@
+<extend name="P:rbcm" />
+<block name="head">
+<title></title>
+<link rel="stylesheet" href="__PUBLIC__/rbac/nodelist.css" />
+</block>
+<block name="body">
+    <div id="wrap">
+       <a href="{:U('Rbac/rolelist')}" class="add-app" >返回</a>
+       <volist name='list' id='app'>
+             <div class="app">
+                 <p>
+                   <strong>{$app.title}</strong>&nbsp;
+                   <input type="checkbox" level='1' {$app.access} value="{$app.id}" />
+                 </p>
+                 <volist name='app.child' id='action'>
+                   <dl>
+                      <dt>
+                         <strong>{$action.title}</strong>&nbsp;
+                         <input type="checkbox" level='2' {$action.access} value="{$action.id}"/>
+                      </dt>
+                      <volist name='action.child' id='v'>
+                      <dd>
+                         <span>{$v.title}</span>&nbsp;
+                         <input type="checkbox" level='3' {$v.access}  value="{$v.id}" />
+                      </dd>
+                      </volist>
+                   </dl>
+                 </volist>
+             </div>
+       </volist>
+       <input type="hidden" name="rid" value="{$rid}" />
+    </div>
+</block>
+<block name="script">
+<script>
+$(function(){
+	var CONTROL="{:u('Rbac/setAccess')}";
+	$('input[type=checkbox]').change(function(){
+		var n=l=$(this).attr('level');
+		if(l!=3){
+		  var arr=new Array('','.app','dl');
+		  var p=arr[l++];
+		  var it='input[level='+l+']'
+    	  var inpts=$(this).parents(p).find(it);
+		  $(this).get(0).checked?inpts.attr('checked','checked'):inpts.removeAttr('checked');
+		  //alert( $(this).get(0).checked);
+		  inpts.change();
+		}
+		var rid=$('input[name=rid]').val();
+		var nid=$(this).val();
+		var chk=$(this).get(0).checked?1:0;
+		$.post(CONTROL,{role_id:rid,node_id:nid,chk:chk});
+	});
+});
+</script>
+</block>

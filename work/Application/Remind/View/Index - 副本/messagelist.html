@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>公告列表</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link rel="stylesheet" href="__PUBLIC__/remind/css//bootstrap.min.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="__PUBLIC__/remind/css//style.css" type="text/css" media="all" />
+        <script type="text/javascript" src="__PUBLIC__/remind/js/jquery.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/remind/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="g-header">
+            <div class="container">
+                <div class="g-header1 fx">
+                    <div class="fx">
+                        <div class="headerimgl">
+                            <img src="__PUBLIC__/remind/images/g-1_03.png"/>
+                        </div>
+                        <div class="headerp">
+                            工作流提醒功能后台
+                        </div>
+                    </div>
+                    <div class="heclose">
+                        <img src="__PUBLIC__/remind/images/v-j_05.png"/>
+                        <p>退出</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gbody">
+            <div class="container">
+                <div class="gbody1 fx1">
+                    <!--左侧：-->
+                    <div class="l-gbody">
+                        <div class="l-gbody-a">
+                            <div class="lie">
+                                <a href="{:U('remind/message')}" class="lieon">公告管理</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/tixing')}" >管理提醒</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/work')}">任务管理</a>
+                            </div>
+                            <div class="lie">
+                                <a href="{:U('remind/userlist')}">权限管理</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--右侧-->
+                    <div class="r-gbody">
+                        <ul>
+                            <li class="fxs tbheder "id="tbheder1">
+                                <div class="p p-a">公告名</div>
+                                <div class="p p-a">发布时间</div>
+                                <div class="p p-a">发布人</div>
+                                <div class="p p-a">操作</div>
+                            </li>
+                            <volist name="list" id="v">
+                            <li class="fxs tbheder">
+                                <div class="p p-a">{$v.title}</div>
+                                <div title="{$v.title}" class="p p-a">{$v.title}</div>
+                                <div title="{$v.jd}" class="p p-a">{$v.jd}</div>
+                                <div class="p p-a "><a href="javascript:;" uid="{$v.user_id}" wid="{$v.work_id}" class="retxt1 pag1 tixing_button">删除</a></div>
+                            </li>
+                            </volist>
+                        </ul>
+                                                <style>
+                            #work_page{width:100%;height:4rem;}
+                            #work_page b{width:2rem;height:2rem;}
+                            #work_page img{width:1rem;height:1rem;}
+                        </style>
+                        <div id="work_page">{$page}</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).on('click','.tixing_button',function(){
+                var uid = $(this).attr('uid');
+                var wid = $(this).attr('wid');
+                $.post("{:U('remind/tixing')}",{op:'post',uid:uid,wid:wid},function(msg){
+                    alert(msg.msg);
+                },'json')
+            })
+        </script>
+    </body>
+</html>
+
+

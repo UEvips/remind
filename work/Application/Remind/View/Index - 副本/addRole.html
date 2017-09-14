@@ -1,0 +1,45 @@
+<extend name="P:rbcm" />
+<block name="head">
+<title></title>
+</block>
+<block name="body">
+<form id="rolefm" onsubmit="return false">
+ <table class="table">
+    <tr><td colspan="2" align="center" id='addmsg'>添加角色</td></tr>
+    <tr>
+      <td align="right" width="40%">角色名称：</td>
+      <td><input type="text" name="name" /></td>
+    </tr>
+    <tr>
+      <td align="right" width="40%">角色描述：</td>
+      <td><input type="text" name="remark" /></td>
+    </tr>
+    <tr>
+      <td align="right" width="40%">开启：</td>
+      <td><input type="checkbox" name="status" value='1'/></td>
+    </tr>
+    <tr><td colspan="2" align="center"><button class="submit" id="submits">保存</button>
+    <input type="hidden" name="pid" value="{$pid}"/>
+    </td></tr> 
+ </table>
+ </form>
+</block>
+<block name="script">
+<script>
+$(function(){
+	var CONTROL="{:U('Rbac/addRole')}";
+	$('#submits').click(function(){
+       var send=FmNull('#rolefm input',1);
+	   if(send){
+		    loading('#addmsg');
+			$.post(CONTROL,$('#rolefm').serialize(),function(data){			
+			     loading('#addmsg',data.states);
+		    });
+	   }
+	});
+	$('#rolefm input').keydown(function(e){
+    	isEnter('#rolefm',$(this),e,1,'#submits');
+	});
+});
+</script>
+</block>

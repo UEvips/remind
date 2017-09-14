@@ -1,0 +1,32 @@
+<extend name="P:rbcm" />
+<block name="head">
+<title></title>
+<link rel="stylesheet" href="__PUBLIC__/rbac/nodelist.css" />
+</block>
+<block name="body">
+    <div id="wrap">
+       <a href="{:U('Rbac/addNode')}" class="add-app" >添加应用</a>
+       <volist name='list' id='app'>
+             <div class="app">
+                 <p>
+                   <strong>{$app.title}</strong>
+                   [<a href="{:U('Rbac/addNode',array('pid'=>$app['id'],'title'=>'['.$app['title'].']控制器'))}" >添加控制器</a>]
+                 </p>
+                 <volist name='app.child' id='action'>
+                   <dl>
+                      <dt>
+                         <strong>{$action.title}</strong>
+                         [<a href="{:U('Rbac/addNode',array('pid'=>$action['id'],'title'=>'['.$action['title'].']方法'))}" >添加方法</a>]
+                      </dt>
+                      <volist name='action.child' id='v'>
+                      <dd>
+                         <span>{$v.title}</span>
+                      </dd>
+                      </volist>
+                   </dl>
+                 </volist>
+             </div>
+       </volist>
+    </div>
+</block>
+<block name="script"></block>

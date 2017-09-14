@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <title>登录</title>
+        <link rel="stylesheet" href="__PUBLIC__/remind/style/reset.css" />
+        <link rel="stylesheet" href="__PUBLIC__/remind/style/login.css" />
+        <script type="text/javascript" src="__PUBLIC__/remind/font/iconfont.js"></script>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="//g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/remind/script/login.js"></script>
+    </head>
+    <body>
+        <div class="login_wrap">
+            <div class="login_logo"><img src="__PUBLIC__/remind/images/logo.png" alt="" /></div>
+            <div class="box">
+                <ul class="form_head clearfix">
+                    <li class="left active" data-id="1">账号密码登录</li>
+                    <li class="right" data-id="2">钉钉扫码登录</li>
+                </ul>
+                <div class="form_box">
+                    <!-- 账号密码登录 -->
+                    <form id="form" action="javascript:void(0);">
+                        <div class="f_child" style="margin-bottom:28px">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhanghao"></use>
+                            </svg>
+                            <input class="txt" id="user" name="user" type="text" value="" placeholder="账号" required>
+                        </div>
+                        <div class="f_child">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-mima"></use>
+                            </svg>
+                            <input class="txt" id="pwd" name="pwd" type="password" value="" placeholder="密码" required>
+                        </div>
+                        <div class="clearfix" style="color:#eaeaea;margin:15px 0 39px;">
+                            <div class="left">
+                                <input class="checkbox" name="iscookie" id="record" value="1" type="checkbox">
+                                <label for="record">自动登录</label>
+                            </div>
+
+                            <a href="javascript:void(0)" class="right" id="forget">
+                                <svg class="icon" aria-hidden="true" style="color:#fff;margin-right:4px">
+                                    <use xlink:href="#icon-wen"></use>
+                                </svg>忘记密码
+                            </a>
+                        </div>
+                        <div class="f_child" id="login_btn"><button type="submit">登录</button></div>
+                    </form>
+                    <!-- 二维码登录 -->
+                    <div class="code_box">
+                        <div class="codepic" id="login_container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--toast-->
+        <div class="toast">
+            <svg class="icon " aria-hidden="true">
+                <use xlink:href="#icon-tishi1"></use>
+            </svg>
+            <p class="toa_txt" >请联系管理员</p>
+        </div>
+    </body>
+</html>

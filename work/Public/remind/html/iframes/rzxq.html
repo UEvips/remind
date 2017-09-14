@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <link rel="stylesheet" href="../../style/reset.css" />
+        <link rel="stylesheet" href="../../lib/style.css" />
+        <link rel="stylesheet" href="../../style/index.css" />
+        <link rel="stylesheet" href="../../style/rightPart/ifra_index.css" />
+    </head>
+    <body>
+        <!--头部---->
+        <div class="xtHead">
+            <div class="left logo">
+                <img src="../../images/txtlogo.png" alt="">
+            </div>
+            <div class="right user">
+                <a href="" class="setting">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-yonghushezhi"></use>
+                    </svg>
+                </a> 
+                <a href="" class="out">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tuichu"></use>
+                    </svg>
+                    <span>退出</span>
+                </a>
+            </div>
+        </div>
+        <!--头部 end--------------------->
+
+        <!--主体---->
+        <div class="main clearfix">
+            <!--           左-->
+            <div class="leftPart left">
+                <!---->
+                <!--日程-->
+                <div class="menu active on clearfix">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fuzai"></use>
+                    </svg>
+                    <span class="span">日&emsp;&emsp;程</span>
+                    <a id="arrow" class="active">
+                        <svg class="icon right" aria-hidden="true">
+                            <use xlink:href="#icon-xiafan"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li data-num="1"><a href="../../index.html">个人进度</a></li>
+                    <li data-num="2"><a href="../iframes/tdjd.html">团队进度</a></li>
+                </ul>
+                <!--用户管理-->
+                <div class="menu active clearfix">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-guanli"></use>
+                    </svg>
+                    <span class="span">用户管理</span>
+                    <a id="arrow" class="active">
+                        <svg class="icon right" aria-hidden="true">
+                            <use xlink:href="#icon-xiafan"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li data-num="3"><a href="../iframes/bmxz.html">部门选择</a></li>
+                    <li data-num="4"><a href="../iframes/qxfp.html">权限分配</a></li>
+                </ul>
+                <!--日志-->
+                <div class="menu active clearfix">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-rizhi"></use>
+                    </svg>
+                    <span class="span">日&emsp;&emsp;志</span>
+                    <a id="arrow" class="active">
+                        <svg class="icon right" aria-hidden="true">
+                            <use xlink:href="#icon-xiafan"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li data-num="5"><a href="../iframes/tjrz.html">添加日志</a></li>
+                    <li class="active" data-num="6"><a href="../iframes/wdrz.html">我的日志</a></li>
+                    <li data-num="7"><a href="../iframes/ckrz.html">查看日志</a></li>
+                </ul>
+                <!--工单-->
+                <div class="menu active clearfix">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-gongdan"></use>
+                    </svg>
+                    <span class="span">工&emsp;&emsp;单</span>
+                    <a id="arrow" class="active">
+                        <svg class="icon right" aria-hidden="true">
+                            <use xlink:href="#icon-xiafan"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="list">
+                    <li data-num="8"><a href="../iframes/dfp.html">待分配</a></li>
+                    <li data-num="9"><a href="../iframes/jxz.html">进行中</a></li>
+                    <li data-num="10"><a href="../iframes/ywc.html">已完成</a></li>
+                </ul>
+                <!---->
+            </div>
+            <!--            右-->
+            <div class="rightPart right">
+                <div class="right_box">
+
+                    <div class="tplWrap">
+                        <div class="title">
+                            <span>日&emsp;&emsp;志</span> 
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-you"></use>
+                            </svg>
+                            <i>我的日志</i>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-you"></use>
+                            </svg>
+                            <i>日志详情</i>
+                        </div>
+                        <div style="width:100%;height:1px;background:#6db738;margin-top:.267rem;"></div>
+                        <div class="min-table">
+                            <!--上午完成-->
+                            <div class="rz_child">
+                                <h4>今天上午完成</h4>
+                                <div class="rz_tab">
+                                    <ul class="rz_tab_head rz_tab_box clearfix">
+                                        <li>项目名称</li>
+                                        <li>类型</li>
+                                        <li>工作内容</li>
+                                        <li>完成度</li>
+                                    </ul>
+                                    <!--需渲染子级-->
+                                    <ul class="rz_cnt rz_tab_box clearfix">
+                                        <li class="border ellipsis">新桥口腔新桥口腔新桥口腔</li>
+                                        <li class="border">
+                                            前端
+                                        </li>
+                                        <li class="border ellipsis">新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔</li>
+                                        <li class="border">
+                                            25%
+                                        </li>
+                                    </ul>
+                                    <!--需渲染子级 end-->                           
+                                </div>
+                            </div>
+                            <!--下午完成-->
+                            <div class="rz_child">
+                                <h4>今天下午完成</h4>
+                                <div class="rz_tab">
+                                    <ul class="rz_tab_head rz_tab_box clearfix">
+                                        <li>项目名称</li>
+                                        <li>类型</li>
+                                        <li>工作内容</li>
+                                        <li>完成度</li>
+                                    </ul>
+                                    <!--需渲染子级-->
+                                    <ul class="rz_cnt rz_tab_box clearfix">
+                                        <li class="border ellipsis">新桥口腔新桥口腔新桥口腔</li>
+                                        <li class="border">
+                                            文案
+                                        </li>
+                                        <li class="border ellipsis">新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔新桥口腔</li>
+                                        <li class="border">
+                                            25%
+                                        </li>
+                                    </ul>
+                                    <!--需渲染子级 end-->
+                                </div>
+                            </div>
+                            <!--明日完成-->
+                            <div class="rz_child">
+                                <h4>明日完成</h4>
+                                <div class="txtarea">
+                                    <input type="text" value="1、修改微商城；2、设计pc端banner；3、工单任务" readonly>
+                                </div>
+                            </div>
+                            <!--添加图片-->
+                            <div class="rz_child">
+                                <h4>附件</h4>
+                                <div class="upfy">
+                                    <img src="../../images/txtlogo.png" alt="">
+                                    <img src="../../images/txtlogo.png" alt="">
+                                    <img src="../../images/xinlang.png" alt="">
+                                </div>
+                            </div>
+                            <!--评价-->
+                            <div class="rz_child">
+                                <h4>评价</h4>
+                                <div class="txtarea">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="填写评价"></textarea>
+                                    <!--发送-->
+                                    <div class="formBn sendBn">
+                                        <span>发送</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---->
+                        </div>
+                    </div>
+                    <!--右半部分 分别渲染处 end-->
+                </div>
+            </div>
+        </div>
+        <!--主体 end--------------------->
+        <!--js-->
+        <script type="text/javascript" src="../../font/iconfont.js"></script>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/Ecalendar.jquery.min.js"></script>
+        <script type="text/javascript" src="../../script/pub.js"></script>
+        <!--        <script type="text/javascript" src="../../script/rightPart/tjrz.js"></script>-->
+    </body>
+</html>
